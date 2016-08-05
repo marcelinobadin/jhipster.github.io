@@ -32,9 +32,9 @@ To generate your application, type:
 
 `yo jhipster`
 
-Answer the questions asked by the generator to create an application taylored to your needs. Those options are described in [the next section](#2).
+Answer the questions asked by the generator to create an application tailored to your needs. Those options are described in [the next section](#2).
 
-Once the application is generated, you can launch it using Maven (`./mvnw` on Linux/MacOS, `mvnw.cmd` on Windows) or Gradle (`./gradlew` on Linux/MacOS, `gradelw.bat` on Windows). You can go the [Using JHipster in development]({{ site.url }}/development/) page for more information.
+Once the application is generated, you can launch it using Maven (`./mvnw` on Linux/MacOS/Windows PowerShell, `mvnw` on Windows Cmd) or Gradle (`./gradlew` on Linux/MacOS/Windows PowerShell, `gradelw` on Windows Cmd). You can go the [Using JHipster in development]({{ site.url }}/development/) page for more information.
 
 The application will be available on [http://localhost:8080](http://localhost:8080)
 
@@ -75,7 +75,7 @@ The OAuth 2.0 and the JWT approaches allow to use a stateless application archit
 You can choose between:
 
 - No database (only available when using a [microservice application]({{ site.url }}/microservices-architecture/))
-- An SQL database (H2, MySQL, PostgreSQL, Oracle), which you will access with Spring Data JPA
+- An SQL database (H2, MySQL, MariaDB, PostgreSQL, Oracle), which you will access with Spring Data JPA
 - [MongoDB]({{ site.url }}/using-mongodb/)
 - [Cassandra]({{ site.url }}/using-cassandra/)
 

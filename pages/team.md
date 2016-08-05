@@ -88,6 +88,15 @@ JHipster is developed by a team of people around the world. We have a lot of con
     </div>
     <div class="col-xs-3 team-member">
         <div class="thumbnail no-margin-bottom">
+            <img src="https://avatars.githubusercontent.com/u/12471122?v=3" class="img-responsive">
+            <div class="caption">
+                <h3>Sendil Kumar N</h3>
+                <p><a href="https://twitter.com/sendilkumarn"><i>@sendilkumarn</i></a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-3 team-member">
+        <div class="thumbnail no-margin-bottom">
             <img src="https://avatars.githubusercontent.com/u/1577727?v=3" class="img-responsive">
             <div class="caption">
                 <h3>William Marques</h3>
@@ -124,6 +133,15 @@ JHipster is developed by a team of people around the world. We have a lot of con
     </div>
     <div class="col-xs-3 team-member">
         <div class="thumbnail no-margin-bottom">
+            <img src="https://avatars.githubusercontent.com/u/4294623?v=3" class="img-responsive">
+            <div class="caption">
+                <h3>Jon Ruddell</h3>
+                <p><a href="https://twitter.com/jonruddell"><i>@jonruddell</i></a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-3 team-member">
+        <div class="thumbnail no-margin-bottom">
             <img src="https://avatars.githubusercontent.com/u/1107223?v=3" class="img-responsive">
             <div class="caption">
                 <h3>Deepu K Sasidharan</h3>
@@ -145,7 +163,7 @@ JHipster is developed by a team of people around the world. We have a lot of con
 
 # Where does the development team work?
 
-We do most of our work on [the project's Github page](https://github.com/jhipster/generator-jhipster).
+We do most of our work on [the project's GitHub page](https://github.com/jhipster/generator-jhipster).
 
 We also have our own mailing list: it is publicly viewable, as everything we do in JHipster is public, but only the board of developers can send e-mails to the list. It is available [here](https://groups.google.com/forum/?hl=en#!forum/jhipster-dev).
 

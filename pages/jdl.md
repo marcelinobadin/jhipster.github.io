@@ -12,15 +12,19 @@ sitemap:
 
 The JDL is a JHipster specific domain language where we have added the possibility to describe all your entities and their relationships in a single file (or more than one) with a simple and user-friendly syntax.
 
-You can use our online [JDL-Studio]({{ site.url }}/jdl-studio/) IDE to create JDL and its UML visualization. You can create and export or share URL of your JDL as well.
+You can use our online [JDL-Studio]({{ site.url }}/jdl-studio/) IDE to create JDL and its UML visualization. You can create and export or share the URL of your JDL model as well.
 
-You can also generate entities from a JDL file using the [import-jdl]({{ site.url }}/importing-jdl/) sub generator. Simply run `yo jhipster:import-jdl yourJdlFilePath.jh` from the root of the generated JHipster application. Or by using [JHipster UML]({{ site.url }}/jhipster-uml/).
+You can generate entities from a JDL file using the `import-jdl` sub-generator, by running `yo jhipster:import-jdl your-jdl-file.jh`.
+You can also generate entities from a JDL file using [JHipster UML]({{ site.url }}/jhipster-uml/), by running `jhipster-uml your-jdl-file.jh` from the root of the generated JHipster application. To learn more about JHipster UML, and install it, go to the [JHipster UML documentation]({{ site.url }}/jhipster-uml/).
 
-- this can be used as a replacement to using the [entity sub-generator]({{ site.url }}/creating-an-entity/). The idea is that it is much easier to [manage relationships]({{ site.url }}/managing-relationships/) using a visual tool than with the classical Yeoman questions and answers.
+This can be used as a replacement to using the [entity sub-generator]({{ site.url }}/creating-an-entity/). The idea is that it is much easier to [manage relationships]({{ site.url }}/managing-relationships/) using a visual tool than with the classical Yeoman questions and answers.
 
-The JDL project is [available on Github](https://github.com/jhipster/jhipster-domain-language/), it is an Open Source project like JHipster (Apache 2.0 licence). This can be used a node library to do JDL parsing. If you like this project, don't forget to give us a star on GitHub!
+The JDL project is [available on GitHub](https://github.com/jhipster/jhipster-core/), it is an Open Source project like JHipster (Apache 2.0 License). It can also be used as a node library to do JDL parsing.
 
-Here's what's covered on this page:
+_If you like the JHipster Domain Language, don't forget to give the project a star on [GitHub](https://github.com/jhipster/jhipster-core/)!_
+_If you like the JDL Studio don't forget to give the project a star on [GitHub](https://github.com/jhipster/jdl-studio/)!_
+
+Here is the full JDL documentation:
 
 1. [JDL Sample](#sample)
 2. [How to use it](#howtojdl)  
@@ -40,22 +44,24 @@ Here's what's covered on this page:
 
 # <a name="sample"></a> JDL Sample
 
-The Oracle example has been translated into JDL, and is available [here](https://github.com/jhipster/jhipster-domain-language/blob/master/lib/dsl/example.jh). The same is loaded by default in [JDL-Studio]({{ site.url }}/jdl-studio/) as well.
+The Oracle "Human Resources" sample application has been translated into JDL, and is available [here](https://github.com/jhipster/jhipster-core/blob/master/lib/dsl/example.jh). The same application is loaded by default in [JDL-Studio]({{ site.url }}/jdl-studio/) as well.
 
 ## <a name="howtojdl"></a> How to use it
-You can use it by:
 
-  - simply creating a file with the extension '.jh' or '.jdl',
+If you want to use JHipster UML instead of the `import-jdl` sub-generator you need to install it by running `npm install -g jhipster-uml`.
+
+You can then use JDL files to generate entities:
+
+  - simply create a file with the extension '.jh' or '.jdl',
   - declare your entities and relationships or create and download the file with [JDL-Studio]({{ site.url }}/jdl-studio/),
-  - in your JHipster application's root folder, simply run `yo jhipster:import-jdl yourfile.jh`,
-  - you can also use JDL files in JHipster UML with `jhipster-uml my_file.jdl`.
+  - in your JHipster application's root folder, run `yo jhipster:import-jdl my_file.jdl` or `jhipster-uml my_file.jdl`.
 
 and *Voilà*, you are done!
 
-If you work in a team, perhaps you would like to have multiple files instead of one. We added this option to JHipster UML so that you don't manually
-concatenate all the files into one, you just have to run `jhipster-uml my_file1.jh my_file2.jh`.
+If you work in a team, perhaps you would like to have multiple files instead of one. We added this option so that you don't manually
+concatenate all the files into one, you just have to run `yo jhipster:import-jdl my_file1.jh my_file2.jh` or `jhipster-uml my_file1.jh my_file2.jh`.
 
-If you want to use it in your project, you can add do so by doing `npm install jhipster-domain-language --save` to install it locally, and save it in your `package.json` file.
+If you want to use it in your project, you can add do so by doing `npm install jhipster-core --save` to install it locally, and save it in your `package.json` file.
 
 ## <a name="jdllanguage"></a> The language
 We tried to keep the syntax as friendly as we can for developers.
@@ -210,6 +216,22 @@ You can do the same with the JDL:
 The keywords `dto`, `paginate`, `service` and `with` were added to the grammar to support these changes.
 If a wrong option is specified, JDL will inform you of that with a nice, red message and will just ignore it so as not to corrupt JHipster's JSON files.
 
+#### Service option
+
+No services specified will create a resource class which will call the repository interface directly. This is the default and simplest option, see A.
+Service with serviceClass (see B) will make the resource call the service class which will call the repository interface. Service with serviceImpl (see C) will make a service interface which will be used by the resource class. The interface is implemented by an impl class which will call the repository interface.
+
+Use no service if not sure it's the simplest option and good for CRUD. Use service with a Class if you will have a lot of business logic which will use multple repository's making it ideal for a service class. Jhipster's are not a fan of unnecessary Interfaces but if you like them go for service with impl.
+
+    entity A {}
+    entity B {}
+    entity C {}
+
+    // no service for A
+    service B with serviceClass
+    service C with serviceImpl
+
+
 JDL also supports mass-option setting. it is possible to do:
 
     entity A
@@ -312,6 +334,7 @@ JDL possesses its own kind of comment:
 
 Therefore, anything that starts with `//` is considered an internal comment for JDL, and will not be counted as Javadoc.
 
+Please note that the JDL Studio directives that start with `#`` will be ignored during parsing.
 
 ## <a name="jdlrelationships"></a>All the relationships
 
@@ -485,12 +508,12 @@ Here is the types supported by JDL:
 
 # <a name="issues"></a>Issues and bugs
 
-JDL is [available on Github](https://github.com/jhipster/jhipster-domain-language), and follows the same [contributing guidelines as JHipster]( https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md).
+JDL is [available on GitHub](https://github.com/jhipster/jhipster-core), and follows the same [contributing guidelines as JHipster]( https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md).
 
 Please use our project for submitting issues and Pull Requests concerning the library itself.
 
-- [JDL issue tracker](https://github.com/jhipster/jhipster-domain-language/issues)
-- [JDL Pull Requests](https://github.com/jhipster/jhipster-domain-language/pulls)
+- [JDL issue tracker](https://github.com/jhipster/jhipster-core/issues)
+- [JDL Pull Requests](https://github.com/jhipster/jhipster-core/pulls)
 
 When submitting anything, you must be as precise as possible:  
   - **One posted issue must only have one problem** (or one demand/question);  

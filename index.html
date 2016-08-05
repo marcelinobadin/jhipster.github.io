@@ -6,7 +6,7 @@ angularjs: true
 title: JHipster - Generate your Spring Boot + AngularJS apps!
 sitemap:
     priority: 1.0
-    lastmod: 2016-04-17T00:00:00-00:00
+    lastmod: 2016-05-25T00:00:00-00:00
 ---
 <div ng-app="jhipster.home" ng-controller="HomeController" class="home-container">
     <!-- Header -->
@@ -72,7 +72,7 @@ sitemap:
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="brand">JHipster news and events</h2>
+                    <h2 class="heading">JHipster news and events</h2>
                     <hr class="star-primary">
                 </div>
             </div>
@@ -81,9 +81,7 @@ sitemap:
                     <div>
                         <p>
                             <ul>
-                                <li>Lazaro Prates Júnior will do a JHipster presentation at <a href="http://www.thedevelopersconference.com.br/tdc/2016/florianopolis/trilha-java" target="_blank">the developer's conference</a> in Florianopolis, Brazil on May, 14th</li>
-                                <li>Matt Raible will do his <a href="http://cfp.devoxx.co.uk/2016/talk/OLG-0920/Get_Hip_with_JHipster:_Spring_Boot_+_AngularJS_+_Bootstrap" target="_blank">Get Hip with JHipster talk</a> at Devoxx UK in London, UK on June 8th-10th</li>
-                                <li>Ippon USA will host <a href="http://www.ipponusa.com/training/jhipster-master/" target="_blank">a JHipster training</a> in Washington, DC on July, 27th</li>
+                                <li><a href="https://oracle.rainfocus.com/scripts/catalog/oow16.jsp?event=javaone&search=jhipster&search.event=javaone" target="_blank">Deploying JHipster Microservices [CON1375]</a> will be presented at JavaOne by Joe Kutner from Heroku! JavaOne will take place in San Francisco, USA, on September 18–22, 2016</li>
                                 <li>The JHipster mini-book by Matt Raible <a href="http://www.infoq.com/minibooks/jhipster-mini-book" target="_blank">is available for free at InfoQ</a></li>
                             </ul>
                         </p>
@@ -94,7 +92,7 @@ sitemap:
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="brand">What is JHipster?</h2>
+                    <h2 class="heading">What is JHipster?</h2>
                     <hr class="star-primary">
                 </div>
             </div>
@@ -115,8 +113,7 @@ sitemap:
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <h2 class="hipster-font brand">Goal</h2>
-
+                    <h2 class="hipster-font heading">Goal</h2>
                     <p>
                         Our goal is to generate for you a complete and modern Web app, unifying:
                     </p>
@@ -127,13 +124,11 @@ sitemap:
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <h2 class="hipster-font brand">Sample &amp; Sources</h2>
-
+                    <h2 class="hipster-font heading">Sample &amp; Sources</h2>
                     <p>
                         You can checkout a sample generated application
                         <a href="https://github.com/jhipster/jhipster-sample-app" target="_blank">here</a>.
                     </p>
-
                     <p>
                         JHipster is Open Source, and all development is done on
                         <a href="https://github.com/jhipster/generator-jhipster" target="_blank">GitHub</a>
@@ -145,13 +140,64 @@ sitemap:
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="heading">Who uses JHipster?</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" ng-controller="UsersCtrl">
+                    <div>
+                        <p>
+                            Lots of great companies use JHipster, all over the world! <a href="{{ site.url }}/companies-using-jhipster/">Find the full list here</a>, and don't forget to add your company once you have started using JHipster <i class="fa fa-smile-o"></i>
+                        </p>
+                    </div>
+                    <div id="carousel-customers" class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+
+                            <div class="item container {($index == 0 ? 'active': '')}" ng-if="$index % 6 == 0"
+                                ng-repeat="user in users | filter:{logo:'!!'} | orderBy:'name' as filteredUsers">
+                                <img class="col-md-2 col-sm-2 col-xs-2 logo- img-responsive"
+                                    ng-src="{{ site.url }}/companies-using-jhipster/images/{(filteredUsers[$index].logo)}" alt="{(filteredUsers[$index].name)}" title="{(filteredUsers[$index].name)}">
+                                <img class="col-md-2 col-sm-2 col-xs-2 logo- img-responsive" ng-if="filteredUsers.length > ($index + 1)"
+                                    ng-src="{{ site.url }}/companies-using-jhipster/images/{(filteredUsers[$index + 1].logo)}" alt="{(filteredUsers[$index + 1].name)}" title="{(filteredUsers[$index + 1].name)}">
+                                <img class="col-md-2 col-sm-2 col-xs-2 logo- img-responsive" ng-if="filteredUsers.length > ($index + 2)"
+                                    ng-src="{{ site.url }}/companies-using-jhipster/images/{(filteredUsers[$index + 2].logo)}" alt="{(filteredUsers[$index + 2].name)}" title="{(filteredUsers[$index + 2].name)}">
+                                <img class="col-md-2 col-sm-2 col-xs-2 logo- img-responsive" ng-if="filteredUsers.length > ($index + 3)"
+                                    ng-src="{{ site.url }}/companies-using-jhipster/images/{(filteredUsers[$index + 3].logo)}" alt="{(filteredUsers[$index + 3].name)}" title="{(filteredUsers[$index + 3].name)}">
+                                <img class="col-md-2 col-sm-2 col-xs-2 logo- img-responsive" ng-if="filteredUsers.length > ($index + 4)"
+                                    ng-src="{{ site.url }}/companies-using-jhipster/images/{(filteredUsers[$index + 4].logo)}" alt="{(filteredUsers[$index + 4].name)}" title="{(filteredUsers[$index + 4].name)}">
+                                <img class="col-md-2 col-sm-2 col-xs-2 logo- img-responsive" ng-if="filteredUsers.length > ($index + 5)"
+                                    ng-src="{{ site.url }}/companies-using-jhipster/images/{(filteredUsers[$index + 5].logo)}" alt="{(filteredUsers[$index + 5].name)}" title="{(filteredUsers[$index + 5].name)}">
+                            </div>
+
+                        </div>
+
+                        <div align="center" style="margin-top:20px;">
+                            <!-- Controls -->
+                              <a class="left" href="#carousel-customers" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                              </a>
+                              <a class="right" href="#carousel-customers" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                              </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Stack Section -->
     <section class="success home-section" id="opts">
         <div class="row no-margin">
             <div class="col-lg-12 text-center">
-                <h2 class="brand">Client side options</h2>
+                <h2 class="heading">Client side options</h2>
                 <hr class="star-light">
             </div>
         </div>
@@ -174,11 +220,11 @@ sitemap:
                     <span class="title_sub_tech">AngularJS</span>
                 </li>
                 <li class="clip img-circle">
-                    <img src="img/svg/jquery.svg" class="width white-inv"/>
+                    <img src="img/svg/jquery.svg" class="width invert-hover"/>
                     <span class="title_sub_tech">JQuery</span>
                 </li>
                 <li class="clip img-circle new">
-                    <img src="img/icons/websocket.png" class="invert-hover"/>
+                    <img src="img/icons/websocket.png" class="invert"/>
                     <span class="title_sub_tech">Websockets</span>
                 </li>
                 <li class="clip img-circle new">
@@ -210,7 +256,7 @@ sitemap:
         </div>
         <div class="row no-margin">
             <div class="col-lg-12 text-center">
-                <h2 class="brand">Server side options</h2>
+                <h2 class="heading">Server side options</h2>
                 <hr class="star-light">
             </div>
         </div>
@@ -229,11 +275,11 @@ sitemap:
                     <span class="title_sub_tech">Netflix OSS</span>
                 </li>
                 <li class="clip img-circle new">
-                    <img src="img/icons/gradle-new.png" class="white-inv"/>
+                    <img src="img/icons/gradle-new.png" class="invert-hover-white"/>
                     <span class="title_sub_tech">Gradle</span>
                 </li>
                 <li class="clip img-circle new">
-                    <img src="img/icons/maven.png" class="white-inv width" />
+                    <img src="img/icons/maven.png" class="invert-hover-white width" />
                     <span class="title_sub_tech">Maven</span>
                 </li>
                 <li class="clip img-circle">
@@ -257,11 +303,11 @@ sitemap:
                     <span class="title_sub_tech">Oracle</span>
                 </li>
                 <li class="clip img-circle new">
-                    <img src="img/icons/mongo.png" class="invert-hover"/>
+                    <img src="img/icons/mongo.png" class="invert"/>
                     <span class="title_sub_tech">MongoDB</span>
                 </li>
                 <li class="clip img-circle new">
-                    <img src="img/svg//cassandra.svg" class="white-inv" />
+                    <img src="img/svg//cassandra.svg" class="invert-hover-white" />
                     <span class="title_sub_tech">Cassandra</span>
                 </li>
                 <li class="clip img-circle new">
@@ -269,7 +315,7 @@ sitemap:
                     <span class="title_sub_tech">EhCache</span>
                 </li>
                 <li class="clip img-circle new">
-                    <img src="img/icons/Hazelcast.png" class="white-inv" />
+                    <img src="img/icons/Hazelcast.png" class="invert-hover-white" />
                     <span class="title_sub_tech">Hazelcast</span>
                 </li>
                 <li class="clip img-circle new">
@@ -298,16 +344,17 @@ sitemap:
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="brand">Quick Start</h2>
+                    <h2 class="heading">JHipster Quick Start</h2>
                     <hr class="star-primary">
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col-lg-12">
                     <p>Install JHipster <code>npm install -g generator-jhipster</code></p>
-                    <p>Create a new directory and go into it <code>mkdir myApp && cd myApp</code></p>
+                    <p>Create a new directory and go into it <code>mkdir myApp &amp;&amp; cd myApp</code></p>
                     <p>Run JHipster and follow instructions on screen <code>yo jhipster</code></p>
-                    <p>Model your entities with <a href="{{ site.url }}/jdl-studio/" target="_blank">JDL Studio</a> and generate them with <code>yo jhipster:import-jdl yourJdlFile.jh</code></p>
+                    <p>Model your entities with <a href="{{ site.url }}/jdl-studio/" target="_blank">JDL Studio</a> and download the resulting <code>jhipster-jdl.jh</code> file</p>
+                    <p>Generate your entities with <code>yo jhipster:import-jdl jhipster-jdl.jh</code></p>
                 </div>
                 <div class="col-lg-12">
                     <p><small>* Assuming you have already installed <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">Java</a>, <a href="http://git-scm.com/" target="_blank">Git</a>, <a href="http://nodejs.org/" target="_blank">Node.js</a>, <a href="http://bower.io/#install-bower" target="_blank">Bower</a>, <a href="http://yeoman.io/learning/index.html" target="_blank">Yeoman</a> and <a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md" target="_blank">Gulp</a></small></p>
@@ -321,7 +368,7 @@ sitemap:
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="brand">Modules</h2>
+                    <h2 class="heading">Modules</h2>
                     <hr class="star-light">
                 </div>
             </div>

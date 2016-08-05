@@ -13,9 +13,7 @@ sitemap:
 
 This section contains __user-submitted tips'n tricks__ on using JHipster.
 
-_If you want to contribute, don't hesitate to send us a Pull Request with your tips on our [Github repository](https://github.com/jhipster/jhipster.github.io)._
-
-
+_If you want to contribute, don't hesitate to send us a Pull Request with your tips on our [GitHub repository](https://github.com/jhipster/jhipster.github.io)._
 
 1. [Querydsl support]({{ site.url }}/tips/003_tip_add_querydsl_support.html)
 2. [Using MS SQL Server]({{ site.url }}/tips/004_tip_using_ms_sql_server.html)
@@ -27,3 +25,5 @@ _If you want to contribute, don't hesitate to send us a Pull Request with your t
 8. [Add a new Spring Social connector]({{ site.url }}/tips/012_tip_add_new_spring_social_connector.html)
 9. [Speed up the generator-jhipster]({{ site.url }}/tips/013_tip_speed_up_generator.html)
 10. [Using MariaDB]({{ site.url }}/tips/014_tip_using_mariadb.html)
+11. [Local SMTP Server]({{ site.url }}/tips/015_tip_local_smtp_server.html)
+12. [LDAP Authentication]({{ site.url }}/tips/016_tip_ldap_authentication.html)

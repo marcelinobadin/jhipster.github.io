@@ -23,7 +23,7 @@ $('.navbar-collapse ul li a').click(function () {
 (function () {
     'use-strict';
 
-    angular.module('jhipster.home', ['jhipster.service', 'marketplace.list'])
+    angular.module('jhipster.home', ['jhipster.service', 'marketplace.list', 'jhipster.users'])
         .config([
           '$interpolateProvider',
             function ($interpolateProvider) {
@@ -31,19 +31,19 @@ $('.navbar-collapse ul li a').click(function () {
           }
         ])
         .controller('HomeController', HomeController);
-    
+
     HomeController.$inject = ['$scope', 'GHService', 'NpmService'];
 
     function HomeController($scope, GHService, NpmService) {
-        GHService.getGithubConfig('jhipster', 'generator-jhipster').success(function (data) {
+        GHService.getGitHubConfig('jhipster', 'generator-jhipster').success(function (data) {
             $scope.gitConfig = data;
         });
         var page = 0;
         $scope.gitConftributors = '...';
         var noOfContributors = 0;
         function getContributors(){
-            
-            GHService.getGithubContributors('jhipster', 'generator-jhipster', page).success(function (data) {
+
+            GHService.getGitHubContributors('jhipster', 'generator-jhipster', page).success(function (data) {
                 if(data.length != 0){
                     noOfContributors += data.length;
                     page ++;
